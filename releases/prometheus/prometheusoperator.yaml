@@ -44,8 +44,6 @@ spec:
         enabled: true
         type: pvc
         storageClassName: managed-premium
-      service:
-        type: Loadbalancer
       dashboardProviders: 
         dashboardproviders.yaml:
           apiVersion: 1
