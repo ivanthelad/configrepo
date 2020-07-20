@@ -36,10 +36,10 @@ spec:
       ingress:
           ## If true, Grafana Ingress will be created
           ##
-          enabled: false
-          path: /grafanaint
-          annotations: 
-            service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+        enabled: false
+        path: /grafanaint
+        annotations: 
+          service.beta.kubernetes.io/azure-load-balancer-internal: "true"
       persistence:
         enabled: true
         type: pvc
