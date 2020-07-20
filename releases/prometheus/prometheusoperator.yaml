@@ -1,3 +1,5 @@
+## https://github.com/helm/charts/blob/master/stable/prometheus-operator/values.yaml
+## https://github.com/helm/charts/tree/master/stable/prometheus-operator
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
@@ -37,7 +39,7 @@ spec:
           enabled: true
           path: /grafanaint
           annotations: 
-            service.beta.kubernetes.io/azure-load-balancer-internal: true
+            service.beta.kubernetes.io/azure-load-balancer-internal: "true"
       persistence:
         enabled: true
         type: pvc
