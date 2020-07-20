@@ -30,10 +30,10 @@ spec:
         enableHttp: false
         loadBalancerIP: ""
         externalTrafficPolicy: Local
-      internal:
-        enabled: true
-        annotations:
-          service.beta.kubernetes.io/azure-load-balancer-internal: true
+        internal:
+          enabled: true
+          annotations:
+            service.beta.kubernetes.io/azure-load-balancer-internal: true
       metrics:
         enabled: true
         serviceMonitor:
