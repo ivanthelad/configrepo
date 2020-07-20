@@ -42,10 +42,10 @@ spec:
           enable: true
       replicaCount: 3
       nodeSelector:
-        beta.kubernetes.io/os: linux
+        agentpool: systemnodes
       defaultBackend:
         nodeSelector: 
-          beta.kubernetes.io/os: linux
+          agentpool: systemnodes
       
 
 

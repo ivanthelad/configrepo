@@ -11,7 +11,33 @@ spec:
     name: prometheus-operator
     version: 9.1.0
   values: 
+    prometheusSpec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: agentpool
+                operator: In
+                values: 
+                - systemnodes
+      storageSpec:
+        volumeClaimTemplate:
+          spec:
+            storageClassName: managed-premium
+            accessModes: ["ReadWriteOnce"]
+            resources:
+              requests:
+                storage: 100Gi
+
     grafana:
+      ingress:
+          ## If true, Grafana Ingress will be created
+          ##
+          enabled: true
+          path: /grafanaint
+          annotations: 
+            service.beta.kubernetes.io/azure-load-balancer-internal: true
       persistence:
         enabled: true
         type: pvc
