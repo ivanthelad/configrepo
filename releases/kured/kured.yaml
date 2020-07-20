@@ -12,6 +12,7 @@ spec:
   chart:
     repository: https://weaveworks.github.io/kured
     name: kured
+    version: 2.0.3
   values:
     metrics:
       create: true
