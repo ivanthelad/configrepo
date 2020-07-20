@@ -7,7 +7,6 @@ metadata:
 spec:
   releaseName: prometheus-operator
   chart:
-
     name: stable/prometheus-operator
     version: 9.1.0
 
