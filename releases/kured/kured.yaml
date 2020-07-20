@@ -18,10 +18,11 @@ spec:
       create: true
     image:
       repository: weaveworks/kured
+      tag: 1.4.4
     nodeSelector: 
       kubernetes.io/os=linux: ssd
     service:
       annotations:
-        prometheus.io/scrape: "true"
-        prometheus.io/path: "/metrics"
-        prometheus.io/port: "8080"
+        prometheus.io/scrape: true
+        prometheus.io/path: /metrics
+        prometheus.io/port: 8080
