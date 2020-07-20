@@ -15,7 +15,7 @@ spec:
     version: 2.0.3
   values:
     metrics:
-      create: true
+      create: false
     image:
       repository: weaveworks/kured
       tag: 1.4.4
