@@ -3,7 +3,7 @@ apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: prometheus-operator 
-  namespace: prometheus-operator
+  namespace: prometheus
 spec:
   releaseName: prometheus-operator
   chart:
