@@ -1,0 +1,20 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: kured
+  namespace: kured
+  annotations:
+    fluxcd.io/automated: "true"
+    fluxcd.io/tag.chart-image: semver:~4.0
+spec:
+  releaseName: kured
+  chart:
+    repository: https://kubernetes-charts.storage.googleapis.com/
+    name: stable/kured
+    version: 1.6.0
+  values:
+    image:
+      repository: weaveworks/kured
+    nodeSelector: 
+      kubernetes.io/os=linux: ssd
