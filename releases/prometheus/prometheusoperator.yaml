@@ -8,6 +8,6 @@ spec:
   releaseName: prometheus-operator
   chart:
     repository: https://kubernetes-charts.storage.googleapis.com/
-    name: stable/prometheus-operator
+    name: prometheus-operator
     version: 9.1.0
 
