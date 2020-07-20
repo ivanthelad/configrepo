@@ -10,4 +10,30 @@ spec:
     repository: https://kubernetes-charts.storage.googleapis.com/
     name: prometheus-operator
     version: 9.1.0
+  values: 
+    grafana:
+      persistence:
+        enabled: true
+        type: pvc
+        storageClassName: managed-premium
+      service:
+        type: Loadbalancer
+      dashboards:
+        default:
+          kubernetes-cluster-monitoring:
+            # Ref: https://grafana.com/dashboards/3119 - Kubernetes cluster monitoring (via Prometheus)
+            gnetId: 3119
+            revision: 2
+            datasource: Prometheus
+          kubernetes-cluster:
+            # Ref: https://grafana.com/dashboards/6417 - Kubernetes cluster 
+            gnetId: 6417
+            revision: 1
+            datasource: Prometheus
+          node-exporter:
+            # Ref: https://grafana.com/dashboards/6417 - Kubernetes cluster 
+            gnetId: 11074
+            revision: 1
+            datasource: Prometheus
+        
 
