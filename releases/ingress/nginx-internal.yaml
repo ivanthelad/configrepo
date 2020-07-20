@@ -3,13 +3,13 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: nginx
+  name: nginx-internal
   namespace: ingress
   annotations:
     fluxcd.io/automated: "true"
     fluxcd.io/tag.chart-image: semver:~4.0
 spec:
-  releaseName: nginx
+  releaseName: nginx-internal
   chart:
     repository: https://kubernetes.github.io/ingress-nginx
     name: ingress-nginx
@@ -23,7 +23,12 @@ spec:
         effect: NoSchedule
     controller:
       podLabels:
-        lbtype: external
+        lbtype: internal
+      ingressClass: nginx-internal
+      scope:
+        enabled: true
+      autoscaling:
+        enabled: true
       tolerations:
       - key: CriticalAddonsOnly
         operator: Exists
@@ -32,8 +37,8 @@ spec:
         enableHttp: false
         loadBalancerIP: ""
         externalTrafficPolicy: Local
-        internal:
-          enabled: false
+        annotations:
+          service.beta.kubernetes.io/azure-load-balancer-internal: true
       metrics:
         enabled: true
         serviceMonitor:

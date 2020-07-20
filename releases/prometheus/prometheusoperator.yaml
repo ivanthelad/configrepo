@@ -6,6 +6,9 @@ kind: HelmRelease
 metadata:
   name: prometheus-operator 
   namespace: prometheus
+  annotations:
+    fluxcd.io/automated: "true"
+    fluxcd.io/tag.chart-image: semver:~4.0
 spec:
   releaseName: prometheus-operator
   chart:
