@@ -10,11 +10,17 @@ metadata:
 spec:
   releaseName: kured
   chart:
-    repository: https://kubernetes-charts.storage.googleapis.com/
+    repository: https://weaveworks.github.io/kured
     name: kured
-    version: 1.6.0
   values:
+    metrics:
+      create: true
     image:
       repository: weaveworks/kured
     nodeSelector: 
       kubernetes.io/os=linux: ssd
+    service:
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: "/metrics"
+        prometheus.io/port: "8080"
