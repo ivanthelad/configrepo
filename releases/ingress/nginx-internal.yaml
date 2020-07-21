@@ -28,7 +28,7 @@ spec:
       scope:
         enabled: true
       autoscaling:
-        enabled: true
+        enabled: false
       tolerations:
       - key: CriticalAddonsOnly
         operator: Exists
@@ -45,7 +45,7 @@ spec:
           enabled: true
         prometheusRule:
           enable: true
-      replicaCount: 3
+      replicaCount: 1
       nodeSelector:
         agentpool: systemnodes
       defaultBackend:
