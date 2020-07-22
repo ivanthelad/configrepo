@@ -45,7 +45,7 @@ spec:
           enabled: true
         prometheusRule:
           enable: true
-      replicaCount: 1
+      replicaCount: 2
       nodeSelector:
         agentpool: systemnodes
       defaultBackend:
