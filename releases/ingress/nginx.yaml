@@ -18,14 +18,14 @@ spec:
     defaultBackend:
       enabled: true
       tolerations:
-      - key: CriticalAddonsOnly
+      - key: IngressOnly
         operator: Exists
         effect: NoSchedule
     controller:
       podLabels:
         lbtype: external
       tolerations:
-      - key: CriticalAddonsOnly
+      - key: IngressOnly
         operator: Exists
         effect: NoSchedule
       service:
