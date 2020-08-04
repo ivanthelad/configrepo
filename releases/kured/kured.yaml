@@ -30,4 +30,6 @@ spec:
       - key: CriticalAddonsOnly
         operator: Exists
         effect: NoSchedule
-
+      - key: IngressOnly
+        operator: Exists
+        effect: NoSchedule
