@@ -42,10 +42,10 @@ spec:
           enable: true
       replicaCount: 3
       nodeSelector:
-        agentpool: systemnodes
+        agentpool: ingress
       defaultBackend:
         nodeSelector: 
-          agentpool: systemnodes
+          agentpool: ingress
       
 
 
