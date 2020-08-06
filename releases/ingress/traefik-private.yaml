@@ -258,7 +258,7 @@ spec:
     #           - {{ template "traefik.name" . }}
     #       topologyKey: failure-domain.beta.kubernetes.io/zone
     nodeSelector:
-      agentpool: systemnode
+      agentpool: systemnodes
     tolerations:
     - key: CriticalAddonsOnly
       operator: Exists
