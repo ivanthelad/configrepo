@@ -93,7 +93,11 @@ spec:
     # Additional arguments to be passed at Traefik's binary
     # All available options available on https://docs.traefik.io/reference/static-configuration/cli/
     ## Use curly braces to pass values: `helm install --set="additionalArguments={--providers.kubernetesingress.ingressclass=traefik-internal,--log.level=DEBUG}"`
-    additionalArguments: []
+    additionalArguments:
+    - "--metrics.prometheus=true"
+    - "--entryPoints.metrics.address=:9100"
+    - "--metrics.prometheus.entryPoint=metrics"
+    - "--metrics.prometheus.addEntryPointsLabels=true"
     #  - "--providers.kubernetesingress.ingressclass=traefik-internal"
     #  - "--log.level=DEBUG"
 
@@ -231,13 +235,13 @@ spec:
     # Additional serviceAccount annotations (e.g. for oidc authentication)
     serviceAccountAnnotations: {}
 
-    resources: {}
-      # requests:
-      #   cpu: "100m"
-      #   memory: "50Mi"
-      # limits:
-      #   cpu: "300m"
-      #   memory: "150Mi"
+    resources: 
+      requests:
+        cpu: "100m"
+        memory: "50Mi"
+      limits:
+        cpu: "300m"
+        memory: "150Mi"
     affinity: {}
     # # This example pod anti-affinity forces the scheduler to put traefik pods
     # # on nodes where no other traefik pods are scheduled.
