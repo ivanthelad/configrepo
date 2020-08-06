@@ -3,13 +3,13 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: nginx-internal
+  name: traefik-public
   namespace: ingress
   annotations:
     fluxcd.io/automated: "true"
     fluxcd.io/tag.chart-image: semver:~4.0
 spec:
-  releaseName: nginx-internal
+  releaseName: traefik-public
   chart:
     repository: https://containous.github.io/traefik-helm-chart
     name: traefik
