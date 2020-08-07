@@ -36,6 +36,10 @@ spec:
                 storage: 100Gi
 
     grafana:
+      sidecar:
+        dashboards:
+          enabled: true
+          label: grafana_dashboard
       ingress:
           ## If true, Grafana Ingress will be created
           ##

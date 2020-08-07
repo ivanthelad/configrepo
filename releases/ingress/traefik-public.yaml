@@ -69,6 +69,7 @@ spec:
         enabled: true
       kubernetesIngress:
         enabled: true
+        ingressClass: "traefik-public"
 
     #
     # Add volumes to the traefik pod.
