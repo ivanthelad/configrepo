@@ -140,7 +140,7 @@ spec:
         # use `kubectl proxy` or create a secure ingress
         expose: false
         # The exposed port for this service
-        exposedPort: 9000
+        exposedPort: 90009000
         # The port protocol (TCP/UDP)
         protocol: TCP
       web:

@@ -45,8 +45,11 @@ spec:
           ##
         enabled: true
         path: /grafanaint
+        hosts: 
+          grafana.aksonazure.com
+          grafanademo.aksonazure.com
         annotations: 
-          service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+          kubernetes.io/ingress.class: traefik-public
       persistence:
         enabled: true
         type: pvc
