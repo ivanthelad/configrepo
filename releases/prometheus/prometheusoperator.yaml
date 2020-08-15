@@ -48,7 +48,6 @@ spec:
         path: /grafanaint
         hosts: 
           grafana.aksonazure.com
-          grafanademo.aksonazure.com
         annotations: 
           kubernetes.io/ingress.class: traefik-public
       persistence:
