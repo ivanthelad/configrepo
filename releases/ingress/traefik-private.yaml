@@ -99,7 +99,7 @@ spec:
     - "--metrics.prometheus.entryPoint=metrics"
     - "--metrics.prometheus.addEntryPointsLabels=true"
     - "--providers.kubernetesingress.ingressclass=traefik-internal"
-    - "--log.level=DEBUG"
+    - "--log.level=INFO"
 
     # Environment variables to be passed to Traefik's binary
     env: []
