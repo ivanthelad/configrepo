@@ -98,8 +98,8 @@ spec:
     - "--entryPoints.metrics.address=:9100"
     - "--metrics.prometheus.entryPoint=metrics"
     - "--metrics.prometheus.addEntryPointsLabels=true"
-    #  - "--providers.kubernetesingress.ingressclass=traefik-internal"
-    #  - "--log.level=DEBUG"
+    - "--providers.kubernetesingress.ingressclass=traefik-internal"
+    - "--log.level=DEBUG"
 
     # Environment variables to be passed to Traefik's binary
     env: []
