@@ -36,7 +36,7 @@ spec:
                 storage: 100Gi
 
     grafana:
-      adminPassword: MbBpfAUHeEmusTl0ZHGl
+      adminPassword: MbBpfAUHeEmusTl0ZHGl2222
       sidecar:
         dashboards:
           enabled: true
